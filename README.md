@@ -40,6 +40,8 @@ Using `dotnet restore` is generally sufficient for ensuring that all necessary d
 - Microsoft.NET.Test.Sdk
 - Microsoft.AspNetCore.Mvc.Testing
 - xunit
+- dotnet add package Moq
+- dotnet add package xunit.runner.visualstudio
 
 For manual installation, use;
 
