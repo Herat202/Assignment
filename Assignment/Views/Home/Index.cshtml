@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Assignment.Models.Photo>
+
+<div class="container">
+    <div class="search-bar">
+        <input type="text" id="searchTerm" placeholder="Search photos...">
+        <button onclick="handleSearch()">Search</button>
+    </div>
+
+    <div class="photo-gallery-container">
+        <div class="photo-gallery" id="photoGallery">
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var photo in Model)
+                {
+                    <div class="photo">
+                        <img src="@photo.ImageUrl" alt="@photo.Title" />
+                        <p>@photo.Title</p>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No photos found.</p>
+            }
+        </div>
+    </div>
+
+    <div class="load-more" id="loadMoreContainer">
+        <button onclick="loadMorePhotos()">Load More</button>
+    </div>
+
+    <div class="loading" id="loading" style="display: none;">Loading...</div>
+    <div class="error" id="error" style="display: none;">Failed to load photos</div>
+</div>
+
+@section Scripts {
+    <script src="~/js/my_scripts.js"></script>
+}
