@@ -10,7 +10,14 @@ public class FetchServiceTests
     {
         // Arrange
         var mockHttpClientWrapper = new Mock<IHttpClientWrapper>();
-        var flickrApiSettings = Options.Create(new FlickrApiSettings { ApiKey = "test_key", ApiSecret = "test_secret" });
+        var flickrApiSettings = Options.Create(new FlickrApiSettings { 
+            ApiKey = "test_key", 
+            ApiSecret = "test_secret",
+            BaseUrl = "https://api.flickr.com",
+            EndpointPath = "/services/rest",
+            Method = "flickr.photos.search",
+            Format = "json"});
+
         var fetchService = new FetchService(mockHttpClientWrapper.Object, flickrApiSettings);
 
         var searchTerm = "cat";

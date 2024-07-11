@@ -15,12 +15,10 @@ namespace Assignment.Models;
 /// </summary>        
 public class FlickrApiSettings
 {
-    // public required string BaseUrl { get; set; }
-    // public required string EndpointPath { get; set; }
-    // public required string Method { get; set; }
-    // public required string Format { get; set; }
+    public required string BaseUrl { get; set; }
+    public required string EndpointPath { get; set; }
+    public required string Method { get; set; }
+    public required string Format { get; set; }
     public required string ApiKey { get; set; }
     public required string ApiSecret { get; set; }
-
-    // public FlickrApiSettings(){}
 }

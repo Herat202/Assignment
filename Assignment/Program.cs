@@ -46,7 +46,7 @@ builder.Services.Configure<FlickrApiSettings>(options =>
     options.ApiSecret = flickrApiSecret ?? string.Empty;   
 });
 
-// builder.Services.Configure<FlickrApiSettings>(builder.Configuration.GetSection("FlickrApiSettings"));
+builder.Services.Configure<FlickrApiSettings>(builder.Configuration.GetSection("FlickrApiSettings"));
 
 // Add HttpClient service
 builder.Services.AddHttpClient<FetchService>();

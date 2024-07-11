@@ -14,8 +14,10 @@ public class FetchService(IHttpClientWrapper httpClientWrapper, IOptions<FlickrA
     #region Fields (Private Fields)
 
     private readonly IHttpClientWrapper _httpClientWrapper = httpClientWrapper ?? throw new ArgumentNullException(nameof(httpClientWrapper));
-    private readonly string _apiKey = flickrApiSettings.Value.ApiKey ?? throw new InvalidOperationException("API Key not found");
-    private readonly string _apiSecret = flickrApiSettings.Value.ApiSecret ?? throw new InvalidOperationException("API Secret not found");
+    private readonly IOptions<FlickrApiSettings> _flickrApiSettings = flickrApiSettings ?? throw new ArgumentNullException(nameof(flickrApiSettings));
+
+    // private readonly string _apiKey = flickrApiSettings.Value.ApiKey ?? throw new InvalidOperationException("API Key not found");
+    // private readonly string _apiSecret = flickrApiSettings.Value.ApiSecret ?? throw new InvalidOperationException("API Secret not found");
 
     #endregion
 
@@ -29,10 +31,7 @@ public class FetchService(IHttpClientWrapper httpClientWrapper, IOptions<FlickrA
     /// <returns></returns>
     public async Task<List<Photo>> SearchPhotosAsync(string searchTerm, int page)
     {
-        // string flickrApiUrl = ConstructFlickrApiUrl(searchTerm, page);
-
-        string flickrApiUrl = $"https://api.flickr.com/services/rest?method=flickr.photos.search&api_key={_apiKey}&text={searchTerm}&format=json&nojsoncallback=1&page=1";
-
+        string flickrApiUrl = ConstructFlickrApiUrl(searchTerm, page);
         try
         {
             var response = await _httpClientWrapper.GetStringAsync(flickrApiUrl);
@@ -69,32 +68,32 @@ public class FetchService(IHttpClientWrapper httpClientWrapper, IOptions<FlickrA
         }
     }
     
-    // /// <summary>
-    // /// Consgtructs the Flickr API URL from the values provided in the .env file and appsettings.json file.
-    // /// </summary>
-    // /// <param name="searchTerm"></param>
-    // /// <param name="page"></param>
-    // /// <returns></returns>
-    // public string ConstructFlickrApiUrl(string searchTerm, int page)
-    // {
-    //     var flickr = _flickrApiSettings.Value;
-    //     var apiKey = flickr.ApiKey ?? throw new InvalidOperationException("API Key not found");
-    //     var apiSecret = flickr.ApiSecret ?? throw new InvalidOperationException("API Secret not found");
+    /// <summary>
+    /// Consgtructs the Flickr API URL from the values provided in the .env file and appsettings.json file.
+    /// </summary>
+    /// <param name="searchTerm"></param>
+    /// <param name="page"></param>
+    /// <returns></returns>
+    public string ConstructFlickrApiUrl(string searchTerm, int page)
+    {
+        var flickr = _flickrApiSettings.Value;
+        _ = flickr.ApiKey ?? throw new InvalidOperationException("API Key not found");
+        _ = flickr.ApiSecret ?? throw new InvalidOperationException("API Secret not found");
 
-    //     var request = new HttpRequestMessage(HttpMethod.Get, $"{flickr.BaseUrl}{flickr.EndpointPath}");
-    //     var parameters = new Dictionary<string, string>
-    //     {
-    //         { "method", flickr.Method },
-    //         { "api_key", apiKey },
-    //         { "text", searchTerm },
-    //         { "format", flickr.Format },
-    //         { "nojsoncallback", "1" },
-    //         { "page", page.ToString() }
-    //     };
+        var request = new HttpRequestMessage(HttpMethod.Get, $"{flickr.BaseUrl}{flickr.EndpointPath}");
+        var parameters = new Dictionary<string, string>
+        {
+            { "method", flickr.Method },
+            { "api_key", flickr.ApiKey },
+            { "text", searchTerm },
+            { "format", flickr.Format },
+            { "nojsoncallback", "1" },
+            { "page", page.ToString() }
+        };
 
-    //     request.RequestUri = new Uri(QueryHelpers.AddQueryString(request.RequestUri!.ToString(), parameters));
-    //     return request.RequestUri.ToString();
-    // }
+        request.RequestUri = new Uri(QueryHelpers.AddQueryString(request.RequestUri!.ToString(), parameters));
+        return request.RequestUri.ToString();
+    }
 
     #endregion
 }
