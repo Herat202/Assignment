@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const title = document.createElement('p');
             title.textContent = photo.title;
             photoDiv.appendChild(img);
-            photoDiv.appendChild(title);
+            // photoDiv.appendChild(title);
             photoGallery.appendChild(photoDiv);
         });
     }
