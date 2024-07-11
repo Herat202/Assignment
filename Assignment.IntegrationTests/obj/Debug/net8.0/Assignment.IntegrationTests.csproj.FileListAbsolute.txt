@@ -429,18 +429,18 @@
 /Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/Castle.Core.dll
 /Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/Moq.dll
 /Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/CoverletSourceRootsMapping_Assignment.IntegrationTests
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/Assignment.deps.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/Assignment.runtimeconfig.json
 /Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/appsettings.Development.json
 /Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/appsettings.json
 /Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/appsettings.Production.json
 /Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/appsettings.Test.json
-/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/xunit.runner.visualstudio.testadapter.dll
-/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/xunit.runner.reporters.netcoreapp10.dll
-/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/xunit.runner.utility.netcoreapp10.dll
-/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/Assignment.deps.json
-/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/Assignment.runtimeconfig.json
 /Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/Assignment.staticwebassets.runtime.json
 /Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/Assignment
 /Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/MvcTestingAppManifest.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/xunit.runner.visualstudio.testadapter.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/xunit.runner.reporters.netcoreapp10.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/xunit.runner.utility.netcoreapp10.dll
 /Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/Assignment.IntegrationTests.deps.json
 /Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/Assignment.IntegrationTests.runtimeconfig.json
 /Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/bin/Debug/net8.0/Assignment.IntegrationTests.dll

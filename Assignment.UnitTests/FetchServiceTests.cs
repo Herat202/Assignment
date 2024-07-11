@@ -3,13 +3,22 @@ using Microsoft.Extensions.Options;
 using Moq;
 using Newtonsoft.Json.Linq;
 
+/// <summary>
+/// Unit tests: Mock-testing the logic and functionality of the FetchService class.
+///     The only logic inside the FetchService class is the SearchPhotosAsync method, which fetches photos from the Flickr API.
+///     And that logic is dependent on IHttpClientWrapper.
+///     Thus, the IHttpClientWrapper needs to be mocked in order to test the FetchService class.
+/// </summary>
 public class FetchServiceTests
 {
     [Fact]
     public async Task SearchPhotosAsync_ReturnsPhotos()
     {
         // Arrange
+        // Create a mock of IHttpClientWrapper
         var mockHttpClientWrapper = new Mock<IHttpClientWrapper>();
+
+        // Create an instance of IOptions<FlickrApiSettings>
         var flickrApiSettings = Options.Create(new FlickrApiSettings { 
             ApiKey = "test_key", 
             ApiSecret = "test_secret",
@@ -18,12 +27,10 @@ public class FetchServiceTests
             Method = "flickr.photos.search",
             Format = "json"});
 
+        // Create an instance of FetchService with the mock of IHttpClientWrapper and the instance of IOptions<FlickrApiSettings>
         var fetchService = new FetchService(mockHttpClientWrapper.Object, flickrApiSettings);
 
-        var searchTerm = "cat";
-        var page = 1;
-        var flickrApiUrl = $"https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=test_key&text={searchTerm}&format=json&nojsoncallback=1&page={page}";
-
+        // Mock the response content from the Flickr API
         var mockResponseContent = new JObject(
             new JProperty("photos", new JObject(
                 new JProperty("photo", new JArray(
@@ -37,10 +44,15 @@ public class FetchServiceTests
             ))
         ).ToString();
 
+        // Mock the GetStringAsync method of IHttpClientWrapper to return the mock response content
+        var searchTerm = "cat";
+        var page = 1;
+        var flickrApiUrl = $"https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=test_key&text={searchTerm}&format=json&nojsoncallback=1&page={page}";
+
         mockHttpClientWrapper.Setup(wrapper => wrapper.GetStringAsync(It.Is<string>(url => url == flickrApiUrl)))
                              .ReturnsAsync(mockResponseContent);
 
-        // Act
+        // Act : Call the SearchPhotosAsync method of FetchService
         var result = await fetchService.SearchPhotosAsync(searchTerm, page);
 
         // Assert

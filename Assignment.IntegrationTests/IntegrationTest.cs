@@ -2,19 +2,34 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using DotNetEnv;
 using Microsoft.Extensions.Configuration;
 
-public class IntegrationTest : IClassFixture<WebApplicationFactory<Program>> // Use Program as the entry point
+/// <summary>
+/// Integration (End-to-End) test: testing requests against the application as if it were running in a real server environment
+/// Use Program as the entry point
+/// </summary>
+public class IntegrationTest : IClassFixture<WebApplicationFactory<Program>> 
 {
     private readonly HttpClient _client;
 
+    /// <summary>
+    /// Preparing the test setup:
+    ///     Loading environment variables
+    ///     Configuring application settings by setting up an instance of HttpClient
+    /// </summary>
+    /// <param name="factory"></param>
     public IntegrationTest(WebApplicationFactory<Program> factory)
     {
-        // _client = factory.CreateClient();
+        #region Load environment variables from the .env file in the main project (application) directory
 
-        // Specify the relative path to the .env file in the main project directory
-        string envFilePath = "../Assignment/.env";
-        
-        // Load environment variables from the specified .env file
-        Env.Load(envFilePath);
+        var projectDir = Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.Parent?.FullName;
+        var envFilePath = projectDir != null ? Path.Combine(projectDir, "Assignment", ".env") : null;
+        if (File.Exists(envFilePath))
+        {
+            Env.Load(envFilePath);
+        }
+
+        #endregion
+
+        #region Setting up an instance of HttpClient
 
         _client = factory.WithWebHostBuilder(builder =>
         {
@@ -27,8 +42,16 @@ public class IntegrationTest : IClassFixture<WebApplicationFactory<Program>> // 
                 });
             });
         }).CreateClient();
+
+        #endregion
     }
 
+    /// <summary>
+    /// Performing the test: testing the application from the client's perspective, interacting with it through HTTP requests and validating the responses.
+    ///     Send an HTTP GET request to the /api/photos/search endpoint with a query parameter
+    ///     Check the response for success status, content type, and non-empty content. 
+    /// </summary>
+    /// <returns></returns>
     [Fact]
     public async Task SearchPhotos_EndpointReturnsSuccessAndCorrectContentType()
     {
@@ -37,10 +60,10 @@ public class IntegrationTest : IClassFixture<WebApplicationFactory<Program>> // 
             // Arrange
             var url = "/api/photos/search?searchTerm=test";
 
-            // Act
+            // Act : Send an HTTP GET request to the /api/photos/search endpoint with a query parameter
             var response = await _client.GetAsync(url);
 
-            // Assert
+            // Assert : Validate the response
             response.EnsureSuccessStatusCode(); // Status Code 200-299
             Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode); // Ensure success status code
 
