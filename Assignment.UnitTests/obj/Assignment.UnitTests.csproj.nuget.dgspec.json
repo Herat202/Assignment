@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/Assignment.UnitTests.csproj": {}
+    "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/Assignment.UnitTests.csproj": {}
   },
   "projects": {
-    "/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/Assignment.UnitTests.csproj": {
+    "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/Assignment.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/Assignment.UnitTests.csproj",
+        "projectUniqueName": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/Assignment.UnitTests.csproj",
         "projectName": "Assignment.UnitTests",
-        "projectPath": "/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/Assignment.UnitTests.csproj",
+        "projectPath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/Assignment.UnitTests.csproj",
         "packagesPath": "/Users/faeghehhaidari/.nuget/packages/",
-        "outputPath": "/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/",
+        "outputPath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/faeghehhaidari/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj": {
-                "projectPath": "/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj"
+              "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj": {
+                "projectPath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj": {
+    "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj",
+        "projectUniqueName": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj",
         "projectName": "Assignment",
-        "projectPath": "/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj",
+        "projectPath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj",
         "packagesPath": "/Users/faeghehhaidari/.nuget/packages/",
-        "outputPath": "/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment/obj/",
+        "outputPath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/faeghehhaidari/.nuget/NuGet/NuGet.Config"

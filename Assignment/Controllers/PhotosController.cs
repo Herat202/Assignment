@@ -3,9 +3,9 @@ using Assignment.Models;
 
 [ApiController]
 [Route("api/[controller]")]
-public class PhotosController(FetchService FetchService) : ControllerBase
+public class PhotosController(IFetchService fetchService) : ControllerBase
 {
-    private readonly FetchService _fetchService = FetchService;
+    private readonly IFetchService _fetchService = fetchService;
 
     /// <summary>
     /// Endpoint to search photos from Flickr: api/photos/search

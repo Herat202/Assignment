@@ -7,7 +7,6 @@
 /Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/appsettings.Test.json
 /Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment.staticwebassets.runtime.json
 /Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment
-/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
 /Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/xunit.runner.reporters.netcoreapp10.dll
 /Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/xunit.runner.utility.netcoreapp10.dll
 /Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment.UnitTests.deps.json
@@ -121,3 +120,131 @@
 /Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignment.UnitTests.pdb
 /Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignment.UnitTests.genruntimeconfig.cache
 /Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/ref/Assignment.UnitTests.dll
+/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/xunit.runner.visualstudio.testadapter.dll
+/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Castle.Core.dll
+/Users/faeghehhaidari/Desktop/Job Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Moq.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/CoverletSourceRootsMapping_Assignment.UnitTests
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/appsettings.Development.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/appsettings.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/appsettings.Production.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/appsettings.Test.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/xunit.runner.visualstudio.testadapter.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/xunit.runner.reporters.netcoreapp10.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/xunit.runner.utility.netcoreapp10.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment.deps.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment.runtimeconfig.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment.staticwebassets.runtime.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment.UnitTests.deps.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment.UnitTests.runtimeconfig.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment.UnitTests.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment.UnitTests.pdb
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Castle.Core.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/DotNetEnv.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Microsoft.TestPlatform.CoreUtilities.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Microsoft.TestPlatform.PlatformAbstractions.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Microsoft.TestPlatform.CommunicationUtilities.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Microsoft.TestPlatform.CrossPlatEngine.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Microsoft.TestPlatform.Utilities.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Microsoft.VisualStudio.TestPlatform.Common.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/testhost.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Moq.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/NuGet.Frameworks.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Serilog.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Serilog.AspNetCore.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Serilog.Sinks.File.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Sprache.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/xunit.abstractions.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/xunit.assert.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/xunit.core.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/xunit.execution.dotnet.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/cs/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/cs/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/de/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/de/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/es/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/es/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/fr/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/fr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/it/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/it/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ja/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ja/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ko/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ko/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/pl/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/pl/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/pt-BR/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/pt-BR/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ru/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ru/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/zh-Hans/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/cs/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/cs/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/de/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/de/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/de/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/es/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/es/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/es/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/fr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/fr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/fr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/it/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/it/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/it/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ja/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ja/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ja/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ko/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ko/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ko/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/pl/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/pl/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/pl/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/pt-BR/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/pt-BR/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/pt-BR/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ru/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ru/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/ru/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/tr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/zh-Hans/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/zh-Hans/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/zh-Hant/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/bin/Debug/net8.0/Assignment.pdb
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignment.UnitTests.csproj.AssemblyReference.cache
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignment.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignment.UnitTests.AssemblyInfoInputs.cache
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignment.UnitTests.AssemblyInfo.cs
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignment.UnitTests.csproj.CoreCompileInputs.cache
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignment.UnitTests.sourcelink.json
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignme.3B41E99B.Up2Date
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignment.UnitTests.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/refint/Assignment.UnitTests.dll
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignment.UnitTests.pdb
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/Assignment.UnitTests.genruntimeconfig.cache
+/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/obj/Debug/net8.0/ref/Assignment.UnitTests.dll

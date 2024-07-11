@@ -5,7 +5,7 @@ using Serilog.Formatting.Compact;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Load environment variables from .env file
+// Load environment variables from my.env file
 Env.Load();
 
 // Check and log if the environment variables are loaded correctly
@@ -43,11 +43,16 @@ builder.Services.AddControllersWithViews();
 builder.Services.Configure<FlickrApiSettings>(options =>
 {
     options.ApiKey = flickrApiKey ?? string.Empty;
-    options.ApiSecret = flickrApiSecret ?? string.Empty;
+    options.ApiSecret = flickrApiSecret ?? string.Empty;   
 });
+
+// builder.Services.Configure<FlickrApiSettings>(builder.Configuration.GetSection("FlickrApiSettings"));
 
 // Add HttpClient service
 builder.Services.AddHttpClient<FetchService>();
+
+builder.Services.AddTransient<IHttpClientWrapper, HttpClientWrapper>();
+builder.Services.AddTransient<IFetchService, FetchService>();
 
 var app = builder.Build();
 
@@ -68,3 +73,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+
+public partial class Program { }
