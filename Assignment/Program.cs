@@ -39,6 +39,9 @@ builder.Host.UseSerilog();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Add health checks for the main application (web application): the test services might possibly be dependent on the health of the main application.  
+builder.Services.AddHealthChecks();
+
 // Configure FlickrApiSettings to use environment variables
 builder.Services.Configure<FlickrApiSettings>(options =>
 {

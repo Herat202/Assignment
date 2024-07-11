@@ -111,3 +111,38 @@ dotnet run: this will start the application on a local server accissible at http
   - `Assignment.csproj` and `Assignment.sln`: Project and solution files for the ASP.NET Core application.
 
 
+## Regarding running the tests when containerizing:
+- Running Tests Inside the Dockerfile
+- Defining Tests as Separate Services: 
+  - one could consider each of the projects in the solution as a service each with their own Dockerfile
+  - A single docker-compose.yml file at the solution directory takes care of all those Docker files and sets all services up. 
+
+
+## Why the test services depend on the main application service?
+- Integration tests may need the main application to be up to interact with its endpoints or to access its environment (like environment variables or configuration files).
+- Even if they mock some parts, they often depend on the application being available in a certain state (fx. running)
+
+- Mocking vs. Integration: Clearly define which tests require the application to be up and running. Mocking should be used extensively in unit tests to reduce dependencies on external services, while integration tests can validate real interactions with the application.
+
+If your unit tests are purely mock-based and don't require the application's runtime, they can run independently of the main application.
+
+Integration tests may depend on the application being reachable and operational. However, if they only require specific endpoints or services (like APIs), you might consider running those components in Docker Compose along with the tests.
+
+
+
+
+Assignment
+├──  Assignment/
+├──── Dockerfile
+├──── Assignment.csproj
+├──── Program.cs
+├──── ...
+├──  Assignment.UnitTests/
+├──── Dockerfile.UnitTests
+├──── Assignment.UnitTests.csproj
+├──── ...
+├──  Assignment.IntegrationTests/
+├──── Dockerfile.IntegrationTests
+├──── Assignment.IntegrationTests.csproj
+├──── ...
+├──  docker-compose.yml
