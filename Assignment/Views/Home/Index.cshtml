@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model List<Assignment.Models.Photo>
 
 <div class="container">
     <div class="search-bar">
@@ -11,25 +10,7 @@
 
     <div class="photo-gallery-container">
         <div class="photo-gallery" id="photoGallery">
-            @* @if (Model != null && Model.Count > 0)
-            {
-                foreach (var photo in Model)
-                {
-                    <div class="photo">
-                        <img src="@photo.ImageUrl" alt="@photo.Title" />
-                        <p>@photo.Title</p>
-                    </div>
-                }
-            }
-            else
-            {
-                <p>No photos found.</p>
-            } *@
         </div>
-    </div>
-
-    <div class="load-more" id="loadMoreContainer">
-        <button onclick="loadMorePhotos()">Load More</button>
     </div>
 
     <div class="loading" id="loading" style="display: none;">Loading...</div>
@@ -37,5 +18,7 @@
 </div>
 
 @section Scripts {
-    <script src="~/js/my_scripts.js"></script>
+    @* Appending a new unique version so that the browser does not use older js files from cache.
+    NB: A server side and more robust solution is implemented inside the program.cs file. *@
+    <script src="~/js/my_scripts.js" asp-append-version="true"></script>
 }
