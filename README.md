@@ -24,8 +24,7 @@ Choose either of the options below to open the project in your preferred IDE tha
 
 ### Installing Dependencies
 To install the required packages for this project, run the following command in your terminal in VS Code:
-
-dotnet restore
+**dotnet restore**
 
 Using `dotnet restore` is generally sufficient for ensuring that all necessary dependencies are installed. The command will install the following packages (as listed inside the .csproj file):
 
@@ -40,12 +39,11 @@ Using `dotnet restore` is generally sufficient for ensuring that all necessary d
 - Microsoft.NET.Test.Sdk
 - Microsoft.AspNetCore.Mvc.Testing
 - xunit
-- dotnet add package Moq
-- dotnet add package xunit.runner.visualstudio
+- xunit.runner.visualstudio
+- Moq
 
 For manual installation, use;
-
-dotnet add package _packagename_
+**dotnet add package _packagename_**
 
 ### Setting Environment for Running the Application
 To run the application in different environments, you need to set the ASPNETCORE_ENVIRONMENT environment variable by using either of the following options:
@@ -65,7 +63,6 @@ Notes:
 - Development Environment: Default setting for local development. Provides detailed error messages and other developer-friendly features.
 - Test Environment: Use this setting for running automated tests. It can have specific configurations for testing purposes.
 
-
 ### Environment Variables
 To send requests to the Flickr API, you need to have your own API key and API secret. Since these are sensitive information, I choose to exclude them from my git recpository. Thus, I have decided to save them as environment variables inside an .env file in the project root directory and added the file to .gitignore file to exclude that from git commit. However, I have included an examplary file .env.example to clearly show which variables are needed. 
 You only need to:
@@ -76,8 +73,27 @@ You only need to:
 ### Run the application
 To build and run the application, use:
 
-dotnet build: this will build the application
-dotnet run: this will start the application on a local server accissible at https://localhost:7044 or http://localhost:5129 (manually navigate to that).
+**dotnet build** command will build the application
+**dotnet run** command will start the application on a local server accissible at https://localhost:7044 or http://localhost:5129 (manually navigate to that).
+
+
+
+**Assignment**
+├──  **Assignment/**
+├────── Dockerfile
+├────── Assignment.csproj
+├────── Program.cs
+├────── ...
+├──  **Assignment.UnitTests/**
+├────── Dockerfile.UnitTests
+├────── Assignment.UnitTests.csproj
+├────── ...
+├──  **Assignment.IntegrationTests/**
+├──────Dockerfile.IntegrationTests
+├────── Assignment.IntegrationTests.csproj
+├────── ...
+├──  **docker-compose.yml**
+
 
 ## Project Structure
 
@@ -110,7 +126,6 @@ dotnet run: this will start the application on a local server accissible at http
   - `Program.cs`: Entry point for the application.
   - `Assignment.csproj` and `Assignment.sln`: Project and solution files for the ASP.NET Core application.
 
-
 ## Regarding running the tests when containerizing:
 - Running Tests Inside the Dockerfile
 - Defining Tests as Separate Services: 
@@ -131,18 +146,3 @@ Integration tests may depend on the application being reachable and operational.
 
 
 
-Assignment
-├──  Assignment/
-├──── Dockerfile
-├──── Assignment.csproj
-├──── Program.cs
-├──── ...
-├──  Assignment.UnitTests/
-├──── Dockerfile.UnitTests
-├──── Assignment.UnitTests.csproj
-├──── ...
-├──  Assignment.IntegrationTests/
-├──── Dockerfile.IntegrationTests
-├──── Assignment.IntegrationTests.csproj
-├──── ...
-├──  docker-compose.yml
