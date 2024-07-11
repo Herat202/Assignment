@@ -13,6 +13,9 @@ Assignment.UnitTests/obj/
 Assignment.IntegrationTests/bin/
 Assignment.IntegrationTests/obj/
 
+# Ignore TestResults directory
+TestResults/
+
 # Ignore user-specific files
 *.user
 *.userosscache
