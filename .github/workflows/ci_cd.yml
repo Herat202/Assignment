@@ -24,8 +24,16 @@ jobs:
     - name: Build
       run: dotnet build --no-restore -c Release
 
-    - name: Test
+    - name: Create .env file
+      run: |
+        echo "FLICKR_API_KEY=${{ secrets.FLICKR_API_KEY }}" >> .env
+        echo "FLICKR_API_SECRET=${{ secrets.FLICKR_API_SECRET }}" >> .env
+
+    - name: Run Tests
       run: dotnet test --no-build -c Release --verbosity normal
+      env:
+        FLICKR_API_KEY: ${{ secrets.FLICKR_API_KEY }}
+        FLICKR_API_SECRET: ${{ secrets.FLICKR_API_SECRET }}
 
     - name: Publish
       run: dotnet publish -c Release
