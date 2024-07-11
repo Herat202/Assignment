@@ -1,9 +1,6 @@
 # Stage 1: Build the unit tests
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
-WORKDIR /app
-
-# Copy the solution file
-COPY *.sln ./
+WORKDIR /.src
 
 # Copy the project files knowing that the UnitTests project is in a different directory from the Assignment project
 # NB: The UnitTests project is dependent on the Assignment project
@@ -16,8 +13,6 @@ RUN dotnet restore ./Assignment.UnitTests/Assignment.UnitTests.csproj
 
 # Copy the remaining files
 COPY . .
-# COPY Assignment/. Assignment/
-# COPY Assignment.UnitTests/. Assignment.UnitTests/
 
 # Build the project
 RUN dotnet build ./Assignment.UnitTests/Assignment.UnitTests.csproj -c Release

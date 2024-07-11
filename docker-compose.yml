@@ -7,14 +7,14 @@ services:
       context: .
       dockerfile: Assignment/Dockerfile
     ports:
-      - "5129:80"  # Host HTTP port 5129 maps to container port 80
-      - "7044:443" # Host HTTPS port 7044 maps to container port 443
-      # - "${HOST_HTTP_PORT}:${CONTAINER_HTTP_PORT}" # Map host port 5129 to container port 80 (HTTP)
-      # - "${HOST_HTTPS_PORT}:${CONTAINER_HTTPS_PORT}" # Map host port 7044 to container port 443 (HTTPS)
+      # - "5129:80"  # Host HTTP port 5129 maps to container port 80
+      # - "7044:443" # Host HTTPS port 7044 maps to container port 443
+      - "${HOST_HTTP_PORT}:${CONTAINER_HTTP_PORT}" # Map host port 5129 to container port 80 (HTTP)
+      - "${HOST_HTTPS_PORT}:${CONTAINER_HTTPS_PORT}" # Map host port 7044 to container port 443 (HTTPS)
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     env_file:
-      - "./Assignment/.env" # Load .env file for general environment variables
+      - Assignment/.env # Load .env file for general environment variables
     volumes:
       - .:/src # Mount the project directory in the container for development
     healthcheck:
@@ -31,7 +31,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     env_file:
-      - "./Assignment/.env"
+      - Assignment/.env
     volumes:
       - .:/src # Mount the project directory in the container for development
     depends_on:
@@ -45,7 +45,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     env_file:
-      - "./Assignment/.env"
+      - Assignment/.env
     volumes:
       - .:/src # Mount the project directory in the container for development
     depends_on:

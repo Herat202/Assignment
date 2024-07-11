@@ -2,9 +2,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /.src
 
-# Copy the solution file
-COPY *.sln ./
-
 # Copy the project files
 COPY Assignment/*.csproj ./Assignment/
 
@@ -13,14 +10,12 @@ RUN dotnet nuget locals all --clear
 RUN dotnet restore ./Assignment/Assignment.csproj
 
 # Copy the remaining files and build the app
-COPY Assignment/. ./Assignment/
+COPY . .
 
 # Build the project
-# RUN dotnet build -c Release -o /app/build
 RUN dotnet build ./Assignment/Assignment.csproj -c Release -o /app/build
 
 # Publish the application
-# RUN dotnet publish -c Release -o /app/publish
 RUN dotnet publish ./Assignment/Assignment.csproj -c Release -o /app/publish
 
 # Stage 2: Build a runtime image
