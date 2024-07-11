@@ -7,6 +7,8 @@ This project is a web application built with ASP.NET Core. It's structured to se
 HERE I need a sketch, ...
 
 
+![Flowchart](flowchart.png)
+
 ## Getting Started
 
 ### Prerequisites
