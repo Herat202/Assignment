@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="f9151cff-b1b8-402b-b048-49e785ef2cec" name="@fd7c923ba5f6 2024-07-11 15:43:18" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2024-07-11T15:43:18.6390157+00:00" queuing="2024-07-11T15:43:18.6390158+00:00" start="2024-07-11T15:43:17.0087693+00:00" finish="2024-07-11T15:43:18.6458297+00:00" />
+  <TestSettings name="default" id="24f0e064-f4b4-4605-8984-35d2794eac1a">
+    <Deployment runDeploymentRoot="_fd7c923ba5f6_2024-07-11_15_43_18" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="0272256c-4921-49eb-95fc-c0e8700adc3b" testId="793fed49-e3cf-2f5e-41df-1e2330dc0faa" testName="PhotosControllerTests.SearchPhotos_ReturnsOkObjectResult_WithListOfPhotos" computerName="fd7c923ba5f6" duration="00:00:00.1419590" startTime="2024-07-11T15:43:18.2930666+00:00" endTime="2024-07-11T15:43:18.2939329+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0272256c-4921-49eb-95fc-c0e8700adc3b" />
+    <UnitTestResult executionId="91fc08f0-ab02-408f-b02d-e87fa17adeb2" testId="cb1b1af6-826f-38d3-ab42-ca4b2b5dcae8" testName="FetchServiceTests.SearchPhotosAsync_ReturnsPhotos" computerName="fd7c923ba5f6" duration="00:00:00.1593092" startTime="2024-07-11T15:43:18.3118476+00:00" endTime="2024-07-11T15:43:18.3118480+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="91fc08f0-ab02-408f-b02d-e87fa17adeb2" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="FetchServiceTests.SearchPhotosAsync_ReturnsPhotos" storage="/app/assignment.unittests/bin/debug/net8.0/assignment.unittests.dll" id="cb1b1af6-826f-38d3-ab42-ca4b2b5dcae8">
+      <Execution id="91fc08f0-ab02-408f-b02d-e87fa17adeb2" />
+      <TestMethod codeBase="/app/Assignment.UnitTests/bin/Debug/net8.0/Assignment.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="FetchServiceTests" name="SearchPhotosAsync_ReturnsPhotos" />
+    </UnitTest>
+    <UnitTest name="PhotosControllerTests.SearchPhotos_ReturnsOkObjectResult_WithListOfPhotos" storage="/app/assignment.unittests/bin/debug/net8.0/assignment.unittests.dll" id="793fed49-e3cf-2f5e-41df-1e2330dc0faa">
+      <Execution id="0272256c-4921-49eb-95fc-c0e8700adc3b" />
+      <TestMethod codeBase="/app/Assignment.UnitTests/bin/Debug/net8.0/Assignment.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="PhotosControllerTests" name="SearchPhotos_ReturnsOkObjectResult_WithListOfPhotos" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="793fed49-e3cf-2f5e-41df-1e2330dc0faa" executionId="0272256c-4921-49eb-95fc-c0e8700adc3b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cb1b1af6-826f-38d3-ab42-ca4b2b5dcae8" executionId="91fc08f0-ab02-408f-b02d-e87fa17adeb2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 8.0.7)
+[xUnit.net 00:00:00.18]   Discovering: Assignment.UnitTests
+[xUnit.net 00:00:00.23]   Discovered:  Assignment.UnitTests
+[xUnit.net 00:00:00.24]   Starting:    Assignment.UnitTests
+[xUnit.net 00:00:00.46]   Finished:    Assignment.UnitTests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

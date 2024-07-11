@@ -3,22 +3,25 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 
+# Copy the solution file
+COPY *.sln ./
+
 # Copy the project files knowing that the UnitTests project is in a different directory from the Assignment project
 # NB: The UnitTests project is dependent on the Assignment project
-COPY Assignment.IntegrationTests/*.csproj Assignment.IntegrationTests/
-COPY Assignment/*.csproj Assignment/
+COPY Assignment.IntegrationTests/*.csproj ./Assignment.IntegrationTests/
+COPY Assignment/*.csproj ./Assignment/
 
 # Restore the dependencies
 RUN dotnet nuget locals all --clear
-RUN dotnet restore Assignment.IntegrationTests/Assignment.IntegrationTests.csproj
+RUN dotnet restore ./Assignment.IntegrationTests/Assignment.IntegrationTests.csproj
 
-# Copy the remaining files and build the tests
-COPY Assignment/. Assignment/
-COPY Assignment.IntegrationTests/. Assignment.IntegrationTests/
-# COPY . .
+# Copy the remaining files
+COPY . .
+# COPY Assignment/. Assignment/
+# COPY Assignment.IntegrationTests/. Assignment.IntegrationTests/
 
 # Build the project
-RUN dotnet build Assignment.IntegrationTests/Assignment.IntegrationTests.csproj -c Release
+RUN dotnet build ./Assignment.IntegrationTests/Assignment.IntegrationTests.csproj -c Release
 
 # Run the tests
-CMD ["dotnet", "test", "Assignment.IntegrationTests/Assignment.IntegrationTests.csproj", "--logger:trx", "--results-directory", "/src/TestResults/IntegrationTests"]
+CMD ["dotnet", "test", "Assignment.IntegrationTests/Assignment.IntegrationTests.csproj", "--logger:trx", "--results-directory", "/app/TestResults/IntegrationTests"]
