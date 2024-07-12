@@ -75,8 +75,8 @@ You only need to:
 ### Run the application
 To build and run the application, use:
 
-**dotnet build** command will build the application
-**dotnet run** command will start the application on a local server accissible at https://localhost:7044 or http://localhost:5129 (manually navigate to that).
+- **dotnet build** command will build the application
+- **dotnet run** command will start the application on a local server accissible at https://localhost:7044 or http://localhost:5129 (manually navigate to that).
 
 
 
