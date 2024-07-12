@@ -77,8 +77,11 @@ public class FetchService(IHttpClientWrapper httpClientWrapper, IOptions<FlickrA
     public string ConstructFlickrApiUrl(string searchTerm, int page)
     {
         var flickr = _flickrApiSettings.Value;
-        _ = flickr.ApiKey ?? throw new InvalidOperationException("API Key not found");
-        _ = flickr.ApiSecret ?? throw new InvalidOperationException("API Secret not found");
+
+        if (string.IsNullOrEmpty(flickr.ApiKey) || string.IsNullOrEmpty(flickr.ApiSecret))
+        {
+            throw new InvalidOperationException("Flickr API Key or Secret not found");;
+        }
 
         var request = new HttpRequestMessage(HttpMethod.Get, $"{flickr.BaseUrl}{flickr.EndpointPath}");
         var parameters = new Dictionary<string, string>

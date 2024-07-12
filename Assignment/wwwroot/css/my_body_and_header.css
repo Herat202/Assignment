@@ -61,9 +61,31 @@ body {
 }
 
 /* Main container */
-.container {
+.main_container {
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+}
+
+/* Adjust container size for larger screens */
+@media (min-width: 1200px) {
+  .main_container {
+      width: calc(95% - 10px);
+  }
+}
+
+/* Further adjust container size for smaller screens */
+@media (max-width: 768px) {
+  .main_container {
+      width: calc(100% - 10px);
+      padding: 10px;
+  }
+}
+
+/* Full width for very small screens */
+@media (max-width: 480px) {
+  .main_container {
+      width: 100%;
+      padding: 5px;
+  }
 }

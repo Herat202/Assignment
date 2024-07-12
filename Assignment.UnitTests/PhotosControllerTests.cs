@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Assignment.Models;
+using Microsoft.Extensions.Logging;
 
 /// <summary>
 /// Unit tests: Mock-testing the logic and functionality of the PhotosController class.
@@ -18,7 +19,8 @@ public class PhotosControllerTests
         var mockFetchService = new Mock<IFetchService>();
 
         // Create an instance of PhotosController with the mock of IFetchService
-        var photosController = new PhotosController(mockFetchService.Object);
+        var logger = new Mock<ILogger<PhotosController>>().Object;
+        var photosController = new PhotosController(mockFetchService.Object, logger);
         
         // Mock the SearchPhotosAsync method of IFetchService to return a mocked list of photos
         var searchTerm = "test";

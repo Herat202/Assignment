@@ -19,7 +19,8 @@ if (string.IsNullOrEmpty(flickrApiKey) || string.IsNullOrEmpty(flickrApiSecret))
     var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
     var logger = loggerFactory.CreateLogger<Program>();
     logger.LogError("Flickr API Key or Secret is missing. Please ensure they are set in the environment variables.");
-    Environment.Exit(1);
+    // For now, I don't want the program to crash if the environment variables are missing
+    // Environment.Exit(1);
 }
 
 // Configure Serilog to read from appsettings.json and environment-specific JSON files

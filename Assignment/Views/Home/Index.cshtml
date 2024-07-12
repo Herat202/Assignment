@@ -4,20 +4,23 @@
 
 <link rel="stylesheet" href="~/css/my_body_details.css" />
 
-<div class="container">
-    <div class="search-bar">
-        <input type="text" id="searchTerm" placeholder="Search photos...">
-        <button onclick="handleSearch()">Search</button>
-    </div>
+<div class="search-bar">
+    <input type="text" id="searchTerm" placeholder="Search photos...">
+    <button onclick="handleSearch()">Search</button>
+</div>
 
+<div class="container">
     <div class="photo-gallery-container">
         <div class="photo-gallery" id="photoGallery"> 
         </div>
     </div>
-
-    <div class="loading" id="loading" style="display: none;">Loading...</div>
-    <div class="error" id="error" style="display: none;">Failed to load photos</div>
 </div>
+
+<div class="loading" id="loading" style="display: none;">
+    Loading... <br/>
+    <div class="spinner"></div>
+</div>
+<div class="error" id="error" style="display: none;">Failed to load photos</div>
 
 @section Scripts {
     @* Appending a new unique version so that the browser does not use older js files from cache.

@@ -16,18 +16,51 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         const loading = document.getElementById('loading');
         const error = document.getElementById('error');
+        
+        // When loading starts, display the loading spinner and hide the error message
         loading.style.display = 'block';
+        loading.classList.add('active');
         error.style.display = 'none';
 
+        // Set a timeout for the fetch request
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => {
+            controller.abort(); // Abort the fetch request
+            // When loading finishes or fails
+            loading.classList.remove('active');
+            loading.style.display = 'none';
+            error.classList.add('active'); // On error
+            error.textContent = 'Request timed out. Please try again later.';
+            error.style.display = 'block';
+            window.isLoading = false; // Reset loading state
+        }, 10000); // Timeout after 10 seconds
+
         fetch(`/api/photos/search?searchTerm=${searchTerm}&page=${page}`)
-            .then(response => response.json())
+            .then(response => {
+                clearTimeout(timeoutId); // Clear the timeout if request is successful
+                if (!response.ok) 
+                {
+                    console.log("response:", response);
+                    // Extract the error message from the response body
+                    return response.text().then(text => 
+                        {
+                            throw new Error(text);
+                        });
+                }
+                return response.json();
+            })
             .then(data => {
                 loading.style.display = 'none';
                 renderPhotos(data);
                 window.isLoading = false; // Reset loading state
             })
-            .catch(() => {
+            .catch((err) => {
+                console.log(err.message);
+                let partsByStart = err.message.split("Start");
+                let partsByEnd = partsByStart[1].split("End");
+                let finalMessage = partsByEnd[0];
                 loading.style.display = 'none';
+                error.innerHTML = `<p><span style="color: red;">Failed to load photos:</span><br><span style="color: black;">${finalMessage}</span></p>`;
                 error.style.display = 'block';
                 window.isLoading = false; // Reset loading state
             });
@@ -44,7 +77,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const title = document.createElement('p');
             title.textContent = photo.title;
             photoDiv.appendChild(img);
-            // photoDiv.appendChild(title);
+            photoDiv.appendChild(title);  // Perhaps nicer without title !?
             photoGallery.appendChild(photoDiv);
         });
     }
