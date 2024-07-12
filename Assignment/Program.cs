@@ -67,12 +67,15 @@ if (!app.Environment.IsDevelopment() && !app.Environment.EnvironmentName.Equals(
 }
 
 app.UseHttpsRedirection();
+
+// Enabling static files
 app.UseStaticFiles(new StaticFileOptions
 {
     OnPrepareResponse = ctx =>
     {
-        // Disable caching for JavaScript files
-        if (ctx.Context.Request.Path.StartsWithSegments("/js"))
+        // Disable caching for JavaScript and css files
+        if (ctx.Context.Request.Path.StartsWithSegments("/js") ||
+            ctx.Context.Request.Path.StartsWithSegments("/css"))
         {
             ctx.Context.Response.Headers.Append("Cache-Control", "no-cache, no-store, must-revalidate");
             ctx.Context.Response.Headers.Append("Pragma", "no-cache");
