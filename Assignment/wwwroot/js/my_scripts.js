@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', (event) => {
     window.currentPage = 1;
     window.currentSearchTerm = '';
