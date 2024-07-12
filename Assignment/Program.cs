@@ -68,7 +68,7 @@ if (!app.Environment.IsDevelopment() && !app.Environment.EnvironmentName.Equals(
 
 app.UseHttpsRedirection();
 
-// Enabling static files
+// When using static files (images, css, js, etc.) I want to ensure caching for JavaScript and css files is disabled
 app.UseStaticFiles(new StaticFileOptions
 {
     OnPrepareResponse = ctx =>
