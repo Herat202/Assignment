@@ -18,10 +18,10 @@ public class IntegrationTest : IClassFixture<WebApplicationFactory<Program>>
     /// <param name="factory"></param>
     public IntegrationTest(WebApplicationFactory<Program> factory)
     {
-        #region Load environment variables from the .env file in the main project (application) directory
+        #region Load environment variables from the .env file in the solution directory
 
         var projectDir = Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.Parent?.FullName;
-        var envFilePath = projectDir != null ? Path.Combine(projectDir, "Assignment", ".env") : null;
+        var envFilePath = projectDir != null ? Path.Combine(projectDir, ".env") : null;
         if (File.Exists(envFilePath))
         {
             Env.Load(envFilePath);

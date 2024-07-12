@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Your Photo Gallery</title>
 
-    @* For styling: I define my own in my_styles.css and site.css *@
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/my_styles.css" />
+    @* For styling: I define my own under wwwroot folder: *@
+    <link rel="stylesheet" href="~/css/my_body_and_header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/my_footer.css" asp-append-version="true" />
     <script src="~/js/my_scripts.js"></script> 
     @RenderSection("Styles", required: false)
 </head>

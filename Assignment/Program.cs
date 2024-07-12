@@ -5,8 +5,9 @@ using Serilog.Formatting.Compact;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Load environment variables from my.env file
-Env.Load();
+// Load environment variables from the .env file located one directory up in the solution root directory
+var envFilePath = Path.Combine(Directory.GetCurrentDirectory(), "..", ".env");
+Env.Load(envFilePath);
 
 // Check and log if the environment variables are loaded correctly
 var flickrApiKey = Environment.GetEnvironmentVariable("FLICKR_API_KEY");

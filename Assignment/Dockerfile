@@ -1,9 +1,12 @@
 # Stage 1: Build the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
-WORKDIR /.src
+WORKDIR /src
 
 # Copy the project files
 COPY Assignment/*.csproj ./Assignment/
+
+# Copy the entrypoint script to the root of the container
+COPY entrypoint.sh ./entrypoint.sh
 
 # Restore the dependencies
 RUN dotnet nuget locals all --clear
@@ -17,6 +20,9 @@ RUN dotnet build ./Assignment/Assignment.csproj -c Release -o /app/build
 
 # Publish the application
 RUN dotnet publish ./Assignment/Assignment.csproj -c Release -o /app/publish
+
+# Make entrypoint.sh executable
+RUN chmod +x ./entrypoint.sh
 
 # Stage 2: Build a runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
