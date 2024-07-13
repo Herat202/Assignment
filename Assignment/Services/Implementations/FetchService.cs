@@ -1,7 +1,7 @@
 using Assignment.Models;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 /// <summary>
 /// Primary constructor: class and constructor declaration in one go
@@ -32,40 +32,31 @@ public class FetchService(IHttpClientWrapper httpClientWrapper, IOptions<FlickrA
     public async Task<List<Photo>> SearchPhotosAsync(string searchTerm, int page)
     {
         string flickrApiUrl = ConstructFlickrApiUrl(searchTerm, page);
-        try
+    try
+    {
+        var response = await _httpClientWrapper.GetStringAsync(flickrApiUrl).ConfigureAwait(false);
+        var flickrApiResponse = JsonConvert.DeserializeObject<FlickrApiResponse>(response);
+        
+        if (flickrApiResponse?.Photos?.Photo == null)
         {
-            var response = await _httpClientWrapper.GetStringAsync(flickrApiUrl);
-            var flickrResponse = JObject.Parse(response);
-            var photos = new List<Photo>();
+            var message = $"Response from Flickr: No photos found!";
+            throw new Exception(message);
+        }
 
-            if (flickrResponse.SelectToken("photos.photo") is not JArray photoArray)
-            {
-                // Handle the case where the JSON structure is not as expected
-                return photos;
-            }
-            foreach (var photo in photoArray)
-            {
-                if (photo != null)
-                {
-    #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-                    photos.Add(new Photo(
-                        PhotoId: 1,
-                        Title: (string)photo["title"] ?? string.Empty,
-                        Description: "",
-                        DateFetched: new DateTime(),
-                        Tags: searchTerm,
-                        ImageUrl: $"https://live.staticflickr.com/{photo["server"] ?? "default"}/{photo["id"] ?? "default"}_{photo["secret"] ?? "default"}_m.jpg"
-                    ));
-    #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-                }
-            }
-            return photos;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Unexpected error: {ex.Message}");
-            throw;
-        }
+        var photoList = flickrApiResponse.Photos.Photo.ToList();
+        return photoList;
+    }
+    catch (HttpRequestException httpEx)
+    {
+        var message = $"Start An error occurred while processing your request. {Environment.NewLine} {httpEx.Message} End";
+        throw new Exception(message.Replace(Environment.NewLine, "<br>"));
+
+    }
+    catch (Exception ex)
+    {
+        var message = $"Start An error occurred while processing your request. {Environment.NewLine} {ex.Message} End";
+        throw new Exception(message.Replace(Environment.NewLine, "<br>"));
+    }
     }
     
     /// <summary>

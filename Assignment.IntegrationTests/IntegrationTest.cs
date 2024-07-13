@@ -74,15 +74,11 @@ public class IntegrationTest : IClassFixture<WebApplicationFactory<Program>>
         }
         catch (HttpRequestException ex)
         {
-            // Handle specific HTTP request exceptions
-            Console.WriteLine($"HTTP request failed: {ex.Message}");
-            throw;
+            throw new HttpRequestException($"HTTP request failed: {ex.Message}");
         }
         catch (Exception ex)
         {
-            // Handle any other unexpected exceptions
-            Console.WriteLine($"Unexpected error: {ex.Message}");
-            throw;
+            throw new Exception ($"Unexpected error: {ex.Message}");
         }
     }
 }

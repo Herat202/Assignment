@@ -68,7 +68,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     window.renderPhotos = function(photos) {
         const photoGallery = document.getElementById('photoGallery');
+        console.log(photos);
         photos.forEach(photo => {
+            console.log(photo);
             const photoDiv = document.createElement('div');
             photoDiv.className = 'photo';
             const img = document.createElement('img');

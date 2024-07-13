@@ -58,6 +58,7 @@ header {
 /**************************** Body *****************************/
 body {
   font-family: Arial, sans-serif;
+  background-color: lightgrey;
 }
 
 /* Main container */

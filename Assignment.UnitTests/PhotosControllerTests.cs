@@ -25,10 +25,17 @@ public class PhotosControllerTests
         // Mock the SearchPhotosAsync method of IFetchService to return a mocked list of photos
         var searchTerm = "test";
         var page = 1;
-        var mockPhotos = new List<Photo>
-        {
-            new Photo(1, "Test Photo", "", "http://example.com/photo.jpg", new DateTime(), searchTerm)
-        };
+        var mockPhotos = new List<Photo> { new Photo 
+        { Id = "1", 
+        Owner = "test", 
+        Secret = "secret", 
+        Server = "server", 
+        Title = "Test Photo",
+        Farm = 1,
+        IsPublic = 1,
+        IsFriend = 0,
+        IsFamily = 0
+        } };
         mockFetchService.Setup(service => service.SearchPhotosAsync(searchTerm, page)).ReturnsAsync(mockPhotos);
 
         // Act : Call the SearchPhotos endpoint method of PhotosController

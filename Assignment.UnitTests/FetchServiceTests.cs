@@ -35,10 +35,15 @@ public class FetchServiceTests
             new JProperty("photos", new JObject(
                 new JProperty("photo", new JArray(
                     new JObject(
-                        new JProperty("id", "1"),
-                        new JProperty("title", "Test Photo"),
-                        new JProperty("server", "server1"),
-                        new JProperty("secret", "secret1")
+                        new JProperty("id", "53853127416"),
+                        new JProperty("owner", "201033373@N05"),
+                        new JProperty("secret", "0f26b237a0"),
+                        new JProperty("server", "65535"),
+                        new JProperty("farm", 66),
+                        new JProperty("title", "Panchita hdr"),
+                        new JProperty("ispublic", 1),
+                        new JProperty("isfriend", 0),
+                        new JProperty("isfamily", 0)
                     )
                 ))
             ))
@@ -58,7 +63,9 @@ public class FetchServiceTests
         // Assert
         Assert.NotNull(result);
         Assert.Single(result);
-        Assert.Equal("Test Photo", result[0].Title);
-        Assert.Equal($"https://live.staticflickr.com/server1/1_secret1_m.jpg", result[0].ImageUrl);
+        Assert.Equal("Panchita hdr", result[0].Title);
+        Assert.Equal("53853127416", result[0].Id);
+        Assert.Equal("65535", result[0].Server);
+        Assert.Equal("0f26b237a0", result[0].Secret);
     }
 }
