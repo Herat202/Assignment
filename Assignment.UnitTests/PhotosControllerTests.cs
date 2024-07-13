@@ -36,10 +36,10 @@ public class PhotosControllerTests
         IsFriend = 0,
         IsFamily = 0
         } };
-        mockFetchService.Setup(service => service.SearchPhotosAsync(searchTerm, page)).ReturnsAsync(mockPhotos);
+        mockFetchService.Setup(service => service.SearchPhotosAsync(searchTerm, page, "Relevant")).ReturnsAsync(mockPhotos);
 
         // Act : Call the SearchPhotos endpoint method of PhotosController
-        var result = await photosController.SearchPhotos(searchTerm, page);
+        var result = await photosController.SearchPhotos(searchTerm, page, "Relevant");
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result.Result);

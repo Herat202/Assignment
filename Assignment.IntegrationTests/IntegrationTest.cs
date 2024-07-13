@@ -58,7 +58,44 @@ public class IntegrationTest : IClassFixture<WebApplicationFactory<Program>>
         try
         { 
             // Arrange
-            var url = "/api/photos/search?searchTerm=test";
+            var url = "/api/photos/search?searchTerm=test&page=1&sort=Relevant";
+
+            // Act : Send an HTTP GET request to the /api/photos/search endpoint with a query parameter
+            var response = await _client.GetAsync(url);
+
+            // Assert : Validate the response
+            response.EnsureSuccessStatusCode(); // Status Code 200-299
+            Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode); // Ensure success status code
+
+            var content = await response.Content.ReadAsStringAsync();
+            Assert.False(string.IsNullOrEmpty(content), "Response content is empty");
+
+            Assert.Equal("application/json; charset=utf-8", response.Content.Headers.ContentType?.ToString());
+        }
+        catch (HttpRequestException ex)
+        {
+            throw new HttpRequestException($"HTTP request failed: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            throw new Exception ($"Unexpected error: {ex.Message}");
+        }
+    }
+
+
+    /// <summary>
+    /// Performing the test: testing the application from the client's perspective, interacting with it through HTTP requests and validating the responses.
+    ///     Send an HTTP GET request to the /api/photos/getRecent endpoint with a query parameter
+    ///     Check the response for success status, content type, and non-empty content. 
+    /// </summary>
+    /// <returns></returns>
+    [Fact]
+    public async Task GetRecentPhotos_EndpointReturnsSuccessAndCorrectContentType()
+    {
+        try
+        { 
+            // Arrange
+            var url = "/api/photos/GetRecent?&page=1";
 
             // Act : Send an HTTP GET request to the /api/photos/search endpoint with a query parameter
             var response = await _client.GetAsync(url);

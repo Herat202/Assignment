@@ -8,42 +8,30 @@
     <title>@ViewData["Title"] - Your Photo Gallery</title>
 
     @* For styling: I define my own under wwwroot folder: *@
-    <link rel="stylesheet" href="~/css/my_body_and_header.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/my_footer.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/layout.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
     <script src="~/js/my_scripts.js"></script> 
     @RenderSection("Styles", required: false)
 </head>
 
 <body>
-    <header>
-        <nav class="my-navbar">
-            <div class="container-fluid">
-                <a class="my_navbar-brand" href="/">Your Photo Gallery</a>
-                <div> 
-                    <ul class="my_nav-list">
-                        <li class="my_nav-item">
-                            <a class="my_nav-link" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="my_nav-item">
-                            <a class="my_nav-link" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-
-    <div class="main_container" style="height: 80vh;">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div> 
-
-    <footer class="myfooter">
-        <div class="container">
-            &copy; @DateTime.Now.Year - Your Photo Gallery - <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+    <div class="header">
+        <div class="brand">
+            <a href="/" style="color: inherit; text-decoration: none;">Your Photo Gallery</a>
         </div>
+        <div class="nav">
+            <a href="/">Home</a>
+            <a href="/About">About</a>
+            <a href="/Privacy">Privacy</a>
+        </div>
+    </div>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <footer class="footer">
+        &copy; @DateTime.Now.Year - Your Photo Gallery - <a href="/Contact">Contact</a>
     </footer>
 
     @await RenderSectionAsync("Scripts", required: false)

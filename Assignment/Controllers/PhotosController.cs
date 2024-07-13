@@ -9,17 +9,19 @@ public class PhotosController(IFetchService fetchService, ILogger<PhotosControll
     private readonly ILogger<PhotosController> _logger = logger;
 
     /// <summary>
-    /// Endpoint to search photos from Flickr: api/photos/search
+    /// Endpoint to search photos from Flickr: api/photos/search?searchTerm={searchTerm}&page={page}&sort={sort}
     /// </summary>
     /// <param name="searchTerm"></param>
     /// <param name="page"></param>
-    /// <returns></returns>      
+    /// <param name="sort"></param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     [HttpGet("search")]
-    public async Task<ActionResult<List<Photo>>> SearchPhotos([FromQuery] string searchTerm, [FromQuery] int page = 1)
+    public async Task<ActionResult<List<Photo>>> SearchPhotos([FromQuery] string searchTerm, [FromQuery] int page, [FromQuery] string sort)
     {
         try
         {
-            var photos = await _fetchService.SearchPhotosAsync(searchTerm, page);
+            var photos = await _fetchService.SearchPhotosAsync(searchTerm, page, sort);
             return Ok(photos);
         }
         catch (Exception ex)
@@ -28,7 +30,35 @@ public class PhotosController(IFetchService fetchService, ILogger<PhotosControll
             _logger.LogError(ex, "Failed to search photos with term {SearchTerm} and page {Page}", searchTerm, page);
 
             // Return an appropriate error response
-            var message = $"Start An error occurred while processing your request. {Environment.NewLine} {ex.Message} End";
+            var message = $"Start{Environment.NewLine} Oops! {Environment.NewLine} {ex.Message} {Environment.NewLine} End";
+            throw new Exception(message.Replace(Environment.NewLine, "<br>"));
+        }
+    }
+
+
+    /// <summary>
+    /// Endpoint to get the most recent photos from Flickr: api/photos/GetRecent?&page={page}
+    /// This endpoint is called when the user has not specified any searchTerms in the search box. 
+    /// </summary>
+    /// <param name="page"></param>
+    /// <param name="sort"></param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
+    [HttpGet("getRecent")]
+    public async Task<ActionResult<List<Photo>>> GetRecentPhotos([FromQuery] int page)
+    {
+        try
+        {
+            var photos = await _fetchService.GetRecentPhotosAsync(page);
+            return Ok(photos);
+        }
+        catch (Exception ex)
+        {
+            // Log the exception details
+            _logger.LogError(ex, "Failed to search photos with term {SearchTerm} and page {Page}", page);
+
+            // Return an appropriate error response
+            var message = $"Start{Environment.NewLine} Oops! {Environment.NewLine} {ex.Message} {Environment.NewLine} End";
             throw new Exception(message.Replace(Environment.NewLine, "<br>"));
         }
     }

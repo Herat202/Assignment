@@ -19,13 +19,15 @@ public class FetchServiceTests
         var mockHttpClientWrapper = new Mock<IHttpClientWrapper>();
 
         // Create an instance of IOptions<FlickrApiSettings>
-        var flickrApiSettings = Options.Create(new FlickrApiSettings { 
+        var flickrApiSettings = Options.Create(new FlickrApiSettings 
+        { 
             ApiKey = "test_key", 
             ApiSecret = "test_secret",
             BaseUrl = "https://api.flickr.com",
             EndpointPath = "/services/rest",
             Method = "flickr.photos.search",
-            Format = "json"});
+            Format = "json"
+        });
 
         // Create an instance of FetchService with the mock of IHttpClientWrapper and the instance of IOptions<FlickrApiSettings>
         var fetchService = new FetchService(mockHttpClientWrapper.Object, flickrApiSettings);
@@ -52,13 +54,13 @@ public class FetchServiceTests
         // Mock the GetStringAsync method of IHttpClientWrapper to return the mock response content
         var searchTerm = "cat";
         var page = 1;
-        var flickrApiUrl = $"https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=test_key&text={searchTerm}&format=json&nojsoncallback=1&page={page}";
+        var flickrApiUrl = $"https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=test_key&text={searchTerm}&sort=relevance&format=json&nojsoncallback=1&page={page}";
 
         mockHttpClientWrapper.Setup(wrapper => wrapper.GetStringAsync(It.Is<string>(url => url == flickrApiUrl)))
                              .ReturnsAsync(mockResponseContent);
 
         // Act : Call the SearchPhotosAsync method of FetchService
-        var result = await fetchService.SearchPhotosAsync(searchTerm, page);
+        var result = await fetchService.SearchPhotosAsync(searchTerm, page, "Relevant");
 
         // Assert
         Assert.NotNull(result);

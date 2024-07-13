@@ -5,5 +5,7 @@ using Assignment.Models;
 /// </summary>
 public interface IFetchService
 {
-    Task<List<Photo>> SearchPhotosAsync(string searchTerm, int page);
+    Task<List<Photo>> SearchPhotosAsync(string searchTerm, int page, string filter);
+
+    Task<List<Photo>> GetRecentPhotosAsync(int page);
 }

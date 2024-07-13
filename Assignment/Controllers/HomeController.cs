@@ -19,7 +19,20 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet("/About")]
+    public IActionResult About()
+    {
+        return View();
+    }
+
+    [HttpGet("/Privacy")]
     public IActionResult Privacy()
+    {
+        return View();
+    }
+
+    [HttpGet("/Contact")]
+    public IActionResult Contact()
     {
         return View();
     }

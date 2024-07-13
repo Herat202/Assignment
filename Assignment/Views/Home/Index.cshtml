@@ -2,11 +2,18 @@
     ViewData["Title"] = "Home Page";
 }
 
-<link rel="stylesheet" href="~/css/my_body_details.css" />
+<link rel="stylesheet" href="~/css/main.css" />
 
 <div class="search-bar">
     <input type="text" id="searchTerm" placeholder="Search photos...">
     <button onclick="handleSearch()">Search</button>
+
+    <select id="filter" onchange="handleFilterChange()" class="filter-select">
+        <option value="Relevant">Relevant</option>
+        <option value="Interesting">Interesting</option>
+        <option value="Date uploaded">Date uploaded</option>
+        <option value="Date taken">Date taken</option>
+    </select>
 </div>
 
 <div class="container">
@@ -14,13 +21,13 @@
         <div class="photo-gallery" id="photoGallery"> 
         </div>
     </div>
-</div>
 
-<div class="loading" id="loading" style="display: none;">
+    <div class="loading" id="loading" style="display: none;">
     Loading... <br/>
     <div class="spinner"></div>
 </div>
 <div class="error" id="error" style="display: none;">Failed to load photos</div>
+</div>
 
 @section Scripts {
     @* Appending a new unique version so that the browser does not use older js files from cache.

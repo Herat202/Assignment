@@ -63,18 +63,23 @@ public class Photo
 
 
     /// <summary>
-    /// Gets the URL of the image.
+    /// Construct the source URL to a photo once we know its ID, server ID, and secret.
+    /// This info is obtained from the API method (here search method, but also by many API methods).
+    /// Instructions on how to construct the image URL are given by: https://www.flickr.com/services/api/misc.urls.html
     /// </summary>
     public string ImageUrl
     {
         get
         {
-            return $"https://live.staticflickr.com/{Server ?? "default"}/{Id ?? "default"}_{Secret ?? "default"}_m.jpg";
+            return $"https://live.staticflickr.com/{Server ?? "default"}/{Id ?? "default"}_{Secret ?? "default"}_m.jpg"; // m for small size
         }
     }
 }
 
 
+/// <summary>
+/// 
+/// </summary>
 public class PhotosResponse
 {
     [JsonPropertyName("page")]
