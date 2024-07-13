@@ -1,5 +1,4 @@
 # Ignore .env file in the main project
-.env
 
 # Ignore bin and obj (build output directories) in the main project
 Assignment/bin/

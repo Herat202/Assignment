@@ -26,9 +26,9 @@ Choose either of the options below to open the project in your preferred IDE tha
 
 ### Installing Dependencies
 To install the required packages for this project, run the following command in your terminal in VS Code:
-**dotnet restore**
+*dotnet restore*
 
-Using `dotnet restore` is generally sufficient for ensuring that all necessary dependencies are installed. The command will install the following packages (as listed inside the .csproj file):
+Using *dotnet restore`* is generally sufficient for ensuring that all necessary dependencies are installed. The command will install the following packages (as listed inside the .csproj file):
 
 - DotNetEnv
 - Microsoft.Extensions.Configuration
@@ -45,7 +45,7 @@ Using `dotnet restore` is generally sufficient for ensuring that all necessary d
 - Moq
 
 For manual installation, use;
-**dotnet add package _packagename_**
+*dotnet add package _packagename_*
 
 ### Setting Environment for Running the Application
 To run the application in different environments, you need to set the ASPNETCORE_ENVIRONMENT environment variable by using either of the following options:
@@ -66,17 +66,51 @@ Notes:
 - Test Environment: Use this setting for running automated tests. It can have specific configurations for testing purposes.
 
 ### Environment Variables
-To send requests to the Flickr API, you need to have your own API key and API secret. Since these are sensitive information, I choose to exclude them from my git recpository. Thus, I have decided to save them as environment variables inside an .env file in the project root directory and added the file to .gitignore file to exclude that from git commit. However, I have included an examplary file .env.example to clearly show which variables are needed. 
-You only need to:
-- Rename the .env.example file to .env.
-- Insert your own API key and secret in the .env file.
-- You are now good to go!
+To send requests to the Flickr API, you need to have your own API key and API secret. Since these are sensitive information, I have chosen to securely save them as environment variables inside an .env file in the project root directory. For the purpose of this project, the following environment variables are defined inside the .env file in the root directory of the solution:
 
-### Run the application
-To build and run the application, use:
+- FLICKR_API_KEY: API key from Flickr obtained upon Flickr account creation.
+- FLICKR_API_SECRET: API secret from Flickr obtained together with API key upon Flickr account creation.
+- HOST_HTTP_PORT
+- CONTAINER_HTTP_PORT
+- HOST_HTTPS_PORT
+- CONTAINER_HTTPS_PORT
 
-- **dotnet build** command will build the application
-- **dotnet run** command will start the application on a local server accissible at https://localhost:7044 or http://localhost:5129 (manually navigate to that).
+The values of *FLICKR_API_KEY* and *FLICKR_API_SECRET* are simply placeholders in order to avoid revealing my personal Flickr API key and secret. Thus, you only need to replace the two placeholders with your actual Flickr API key and secret values. 
+
+**NB:**
+*These values are also excluded from my git commits. However, in order to get the CI/CD pipeline to run successfully, I have added them as secrets in Github Action.* 
+
+
+### Run unit tests
+To run unit-/integration tests, navigate to the root directory of the solution project, type:
+- *dotnet test* will run all tests in the entire solution. 
+
+### Run the application in Debug mode ###
+To build and run the application do either of the following options:
+- Press F5 (for debug) or ctrl+F5 (no debug)
+- Navigate to the application project directory (Assignment)
+  1. *dotnet build* will build the application
+  2. *dotnet run* will start the application on a local server accissible at https://localhost:7044 or http://localhost:5129 (manually navigate to that).
+
+### Run the application in Docker ###
+This project includes a Docker setup that allows you to build and run the application in isolated containers. Using Docker simplifies the environment setup and ensures consistency across different machines.
+
+#### Prerequisites #### 
+Make sure you have Docker installed on your machine. You can download it from Docker's official site: https://www.docker.com/
+
+#### Run #### 
+- Navigate to the root directory of the whole solution
+1. *docker-compose build* will build the images for all 3 services.
+2. *docker-compose up* runs the container
+3. Access the Application: Open your web browser and navigate to:
+  - http://localhost:5129 for HTTP
+  - https://localhost:7044 for HTTPS
+  - You can also click on the URL's from inside of the web application container. 
+
+*Notes*
+- Ensure your .env file is set up correctly with your Flickr API key and other required environment variables before running the Docker containers.
+- The application is configured to run in the Development environment by default. You can modify this in the docker-compose.yml file if needed.
+
 
 
 
@@ -144,6 +178,7 @@ To build and run the application, use:
 If your unit tests are purely mock-based and don't require the application's runtime, they can run independently of the main application.
 
 Integration tests may depend on the application being reachable and operational. However, if they only require specific endpoints or services (like APIs), you might consider running those components in Docker Compose along with the tests.
+
 
 
 
