@@ -49,44 +49,11 @@ public class FetchService(IHttpClientWrapper httpClientWrapper, IOptions<FlickrA
             }
             catch (Exception ex)
             {
-                var message = $"Start {Environment.NewLine} Oops! {Environment.NewLine} {ex.Message} {Environment.NewLine} End";
+                var message = $"{ex.Message}";
                 throw new Exception(message.Replace(Environment.NewLine, "<br>"));
             }
         }
         
-
-        /// <summary>
-        /// Get the most recent photos from Flickr GetRecent API. 
-        /// Used when users DO NOT provide the searchTerm in the search box. 
-        /// When users do not specify what photos to search, Flickr will just return the most recent photos.
-        /// </summary>
-        /// <param name="page"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
-        public async Task<List<Photo>> GetRecentPhotosAsync(int page)
-        {
-            try
-            {
-                string flickrApiUrl = ConstructFlickrGetRecentApiUrl(page);
-                var response = await _httpClientWrapper.GetStringAsync(flickrApiUrl).ConfigureAwait(false);
-                var flickrApiResponse = JsonConvert.DeserializeObject<FlickrApiResponse>(response);
-                
-                if (flickrApiResponse?.Photos?.Photo == null)
-                {
-                    var message = $"Response from Flickr: No photos found!";
-                    throw new Exception(message);
-                }
-
-                var photoList = flickrApiResponse.Photos.Photo.ToList();
-                return photoList;
-            }
-            catch (Exception ex)
-            {
-                var message = $"Start {Environment.NewLine} Oops! {Environment.NewLine} {ex.Message} {Environment.NewLine} End";
-                throw new Exception(message.Replace(Environment.NewLine, "<br>"));
-            }
-        }
-
     #endregion
 
     #region Helper Methods
@@ -108,7 +75,9 @@ public class FetchService(IHttpClientWrapper httpClientWrapper, IOptions<FlickrA
             {
                 throw new Exception("Flickr API Key or Secret not found");
             }
-
+            
+            var request = new HttpRequestMessage(HttpMethod.Get, $"{flickr.BaseUrl}{flickr.EndpointPath}");
+            
             var category = filter switch
             {
                 "Relevant" => "relevance",
@@ -118,55 +87,33 @@ public class FetchService(IHttpClientWrapper httpClientWrapper, IOptions<FlickrA
                 _ => "relevance"
             };
 
-            var request = new HttpRequestMessage(HttpMethod.Get, $"{flickr.BaseUrl}{flickr.EndpointPath}");
-            var parameters = new Dictionary<string, string>
-            {
-                { "method", flickr.Method },
-                { "api_key", flickr.ApiKey },
-                { "text", searchTerm },
-                { "sort", category},
-                { "format", flickr.Format },
-                { "nojsoncallback", "1" },
-                { "page", page.ToString() }
-            };
-
-            // https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f41fc432b306fe4659037538b095c884&text=dogs&sort=relevance&format=json&nojsoncallback=1
+            var parameters = string.IsNullOrEmpty(searchTerm)
+            ? new Dictionary<string, string>
+                {
+                    { "method", "flickr.photos.getRecent" },
+                    { "api_key", flickr.ApiKey },
+                    { "format", flickr.Format },
+                    { "nojsoncallback", "1" },
+                    { "page", page.ToString() }
+                }
+                // Example url:
+                // https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=f41fc432b306fe4659037538b095c884&format=json&nojsoncallback=
+            :new Dictionary<string, string>
+                {
+                    { "method", flickr.Method },
+                    { "api_key", flickr.ApiKey },
+                    { "text", searchTerm},
+                    { "sort", category},
+                    { "format", flickr.Format },
+                    { "nojsoncallback", "1" },
+                    { "page", page.ToString() }
+                };
+                // Example url:
+                // https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f41fc432b306fe4659037538b095c884&text=dogs&sort=relevance&format=json&nojsoncallback=1
+            
             request.RequestUri = new Uri(QueryHelpers.AddQueryString(request.RequestUri!.ToString(), parameters));
             return request.RequestUri.ToString();
         }
 
-
-        /// <summary>
-        /// Constructs the Flickr API URL from the values provided in the .env file and appsettings.json file.
-        /// </summary>
-        /// <param name="page"></param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentException"></exception>
-        public string ConstructFlickrGetRecentApiUrl(int page)
-        {
-            var flickr = _flickrApiSettings.Value;
-
-            if (string.IsNullOrEmpty(flickr.ApiKey) || string.IsNullOrEmpty(flickr.ApiSecret))
-            {
-                throw new Exception("Flickr API Key or Secret not found");;
-            }
-
-            var request = new HttpRequestMessage(HttpMethod.Get, $"{flickr.BaseUrl}{flickr.EndpointPath}");
-            var parameters = new Dictionary<string, string>
-            {
-                { "method", "flickr.photos.getRecent" },
-                { "api_key", flickr.ApiKey },
-                { "format", flickr.Format },
-                { "nojsoncallback", "1" },
-                { "page", page.ToString() }
-            };
-
-            // https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=f41fc432b306fe4659037538b095c884&format=json&nojsoncallback=1
-            request.RequestUri = new Uri(QueryHelpers.AddQueryString(request.RequestUri!.ToString(), parameters));
-            return request.RequestUri.ToString();
-        }
-        
     #endregion 
 }
-
-

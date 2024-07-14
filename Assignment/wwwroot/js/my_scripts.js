@@ -43,14 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         window.currentPage = 1;
         const filter = document.getElementById("filter").value;
         document.getElementById('photoGallery').innerHTML = ''; // Clear previous results
-        if (window.currentSearchTerm) 
-        {
-            fetchPhotos(window.currentSearchTerm, window.currentPage, filter);
-        } 
-        else 
-        {
-            fetchPhotos("", window.currentPage, filter);
-        }
+        fetchPhotos(window.currentSearchTerm, window.currentPage, filter);
         window.currentFilter = filter;
     }
 
@@ -84,19 +77,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }, 10000); // Timeout after 10 seconds
 
         let url = "";
-        if (searchTerm) 
+        // If users insert nothing or a whitespace, we will search for null: that case our REST API will send a request to Flickr.photos.getRecent API instead.
+        // NB: My first take was to send a different API requests to my REST API serverside. In that case, I would have had two different endpoints (controllers),
+        // But I choose to handle both types of request in one endpoint. For now, I find that more efficient, since I save some code.
+        if (!searchTerm || searchTerm.trim() === "")
         {
-            // Search photos through Flickr search API
-            // url = `/api/photos/search?searchTerm=${searchTerm}&page=${page}&sort=${filter}`;
-            url = `/api/photos/search?searchTerm=${encodeURIComponent(searchTerm)}&page=${encodeURIComponent(page)}&sort=${encodeURIComponent(filter)}`;
-        } 
-        else 
-        {
-            // Get recent photos through Flickr GetRecent API
+            console.log("Search term: NULL");
+            url = `/api/photos/search?searchTerm=null&page=${encodeURIComponent(page)}&sort=${encodeURIComponent(filter)}`;
             document.getElementById('filter').value = "Date uploaded";
-            url = `api/photos/GetRecent?&page=${page}`;
+            console.log("Our REST API URL:", url);
+        } 
+        else
+        {
+            console.log("Search term:", searchTerm);
+            url = `/api/photos/search?searchTerm=${encodeURIComponent(searchTerm)}&page=${encodeURIComponent(page)}&sort=${encodeURIComponent(filter)}`;
+            console.log("Our REST API URL:", url);
         }
-
         fetch(url)
             .then(response => 
             {

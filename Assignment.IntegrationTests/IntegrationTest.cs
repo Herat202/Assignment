@@ -90,12 +90,12 @@ public class IntegrationTest : IClassFixture<WebApplicationFactory<Program>>
     /// </summary>
     /// <returns></returns>
     [Fact]
-    public async Task GetRecentPhotos_EndpointReturnsSuccessAndCorrectContentType()
+    public async Task SearchPhotosWithNoSearTerm_EndpointReturnsSuccessAndCorrectContentType()
     {
         try
         { 
             // Arrange
-            var url = "/api/photos/GetRecent?&page=1";
+            var url = "/api/photos/search?searchTerm=NULL&page=1&sort=Relevant";
 
             // Act : Send an HTTP GET request to the /api/photos/search endpoint with a query parameter
             var response = await _client.GetAsync(url);
