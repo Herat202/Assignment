@@ -8,13 +8,15 @@
     <input type="text" id="searchTerm" placeholder="Search photos...">
     <button onclick="handleSearch()">Search</button>
 
-    <select id="filter" onchange="handleFilterChange()" class="filter-select">
+    <select id="filter" onchange="handleFilterChange()">
         <option value="Relevant">Relevant</option>
         <option value="Interesting">Interesting</option>
         <option value="Date uploaded">Date uploaded</option>
         <option value="Date taken">Date taken</option>
     </select>
 </div>
+
+<p id="note"></p>
 
 <div class="container">
     <div class="photo-gallery-container">

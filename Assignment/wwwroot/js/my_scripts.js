@@ -86,12 +86,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
             url = `/api/photos/search?searchTerm=null&page=${encodeURIComponent(page)}&sort=${encodeURIComponent(filter)}`;
             document.getElementById('filter').value = "Date uploaded";
             console.log("Our REST API URL:", url);
+            var  note = "NB: Entering a whitespace or no search term will return the most recent photos from Flickr!";
+            document.getElementById('note').innerHTML = note;
+            document.getElementById('note').style.display = "block";
         } 
         else
         {
             console.log("Search term:", searchTerm);
             url = `/api/photos/search?searchTerm=${encodeURIComponent(searchTerm)}&page=${encodeURIComponent(page)}&sort=${encodeURIComponent(filter)}`;
             console.log("Our REST API URL:", url);
+            document.getElementById('note').innerHTML = "";
+            document.getElementById('note').style.display = "none";
         }
         fetch(url)
             .then(response => 
