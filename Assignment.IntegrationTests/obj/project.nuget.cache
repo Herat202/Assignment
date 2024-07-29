@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FwO7BlwvvBILdLSgSaXwulEMv6Rv5ccvQCO24+usZPZA5Ysh+UvACZ1TuVQJSw351fuOiEe/SgQZJon6fU3qXQ==",
+  "dgSpecHash": "97xmh+Ln7FLiKXvQgLGzr/8m9VkEiOwM2R032cXWiMPcubtQUmOu8qcNvfJm3K4t2U0hw6WeQuvxZlsZzdrQ+A==",
   "success": true,
-  "projectFilePath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/Assignment.IntegrationTests.csproj",
+  "projectFilePath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/OriginalAssignment/Assignment.IntegrationTests/Assignment.IntegrationTests.csproj",
   "expectedPackageFiles": [
     "/Users/faeghehhaidari/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
     "/Users/faeghehhaidari/.nuget/packages/dotnetenv/3.0.0/dotnetenv.3.0.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pFpuSPKRMDgk2kYfjVm0W2U3Eks4WBMuLF++8uyoZtboJKeaL06XuGFTeEMC8FjJIQfLsFRajq+IPcmG6kL1Mg==",
+  "dgSpecHash": "oATkkaiC4txR+LL2S2NrJNCHaIIQG3xMrkxtTu9I1GEi9Thq548Hik0IiI6OwcsuJlk4jMjpKbWLlEIN25d4bg==",
   "success": true,
-  "projectFilePath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.UnitTests/Assignment.UnitTests.csproj",
+  "projectFilePath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/OriginalAssignment/Assignment.UnitTests/Assignment.UnitTests.csproj",
   "expectedPackageFiles": [
     "/Users/faeghehhaidari/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/faeghehhaidari/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",

@@ -7832,11 +7832,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/Assignment.IntegrationTests.csproj",
+      "projectUniqueName": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/OriginalAssignment/Assignment.IntegrationTests/Assignment.IntegrationTests.csproj",
       "projectName": "Assignment.IntegrationTests",
-      "projectPath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/Assignment.IntegrationTests.csproj",
+      "projectPath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/OriginalAssignment/Assignment.IntegrationTests/Assignment.IntegrationTests.csproj",
       "packagesPath": "/Users/faeghehhaidari/.nuget/packages/",
-      "outputPath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment.IntegrationTests/obj/",
+      "outputPath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/OriginalAssignment/Assignment.IntegrationTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/faeghehhaidari/.nuget/NuGet/NuGet.Config"
@@ -7851,8 +7851,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj": {
-              "projectPath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/Assignment/Assignment/Assignment.csproj"
+            "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/OriginalAssignment/Assignment/Assignment.csproj": {
+              "projectPath": "/Users/faeghehhaidari/Desktop/Job_Ansøgning/Accenture/OriginalAssignment/Assignment/Assignment.csproj"
             }
           }
         }
